@@ -1,22 +1,31 @@
 # Data Logger (and using cool sensors!)
 
-*A lab report by John Q. Student.*
+*A lab report by Tomi Kalejaiye.*
 
 ## In The Report
-
-Include your responses to the bold questions on your own fork of [this lab report template](https://github.com/FAR-Lab/IDD-Fa18-Lab2). Include snippets of code that explain what you did. Deliverables are due next Tuesday. Post your lab reports as README.md pages on your GitHub, and post a link to that on your main class hub page.
-
-For this lab, we will be experimenting with a variety of sensors, sending the data to the Arduino serial monitor, writing data to the EEPROM of the Arduino, and then playing the data back.
 
 ## Part A.  Writing to the Serial Monitor
  
 **a. Based on the readings from the serial monitor, what is the range of the analog values being read?**
+
+The raw analog values being read are from 0 to 1024. These correspond to voltages from 0V to 5V.
  
 **b. How many bits of resolution does the analog to digital converter (ADC) on the Arduino have?**
 
+The ADC on Arduino Uno has a max resolution of 10 bits. A table for bit resolution on each Arduino board can be seen on the documentation for the analogRead() function.
+
 ## Part B. RGB LED
 
+[![RGB LED Lightshow](http://img.youtube.com/vi/viU_miL-xek/0.jpg)](https://www.youtube.com/watch?v=viU_miL-xek)
+
 **How might you use this with only the parts in your kit? Show us your solution.**
+
+1. A cable must be run from the power rail to the common anode pin (longest pin) on the LED.
+2. Resistors placed at each of the three remaining pins. This is to prevent too large of a voltage drop across the LED.
+3. Wires run from the other ends of the resistors to utput pins on the Arduino.
+
+By addressing the output pins in an Arduino sketch we can now control the LED and display different colors. A demonstration
+can be seen above.
 
 ## Part C. Voltage Varying Sensors 
  
