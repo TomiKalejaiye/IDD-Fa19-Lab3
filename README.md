@@ -51,7 +51,7 @@ Assuming we are taking the input from the FSR's voltage divider circuit into the
 
 ### 2. Accelerometer
  
-**a. Include your accelerometer read-out code in your write-up.**
+[Accelerometer Readout Code](https://github.com/TomiKalejaiye/IDD-Fa19-Lab3/blob/master/LCDacceldemo.ino)
 
 ## Graphic Display
 
