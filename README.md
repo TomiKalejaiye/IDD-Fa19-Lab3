@@ -50,6 +50,9 @@ Assuming we are taking the input from the FSR's voltage divider circuit into the
 **e. What kind of relationship does the resistance have as a function of stimulus? (e.g., linear?)**
 
 ### 2. Accelerometer
+
+[![LCD Accelerometer Readout](http://img.youtube.com/vi/sdidXR9ATxI/0.jpg)](https://www.youtube.com/watch?v=sdidXR9ATxI)
+
  
 [Accelerometer Readout Code](https://github.com/TomiKalejaiye/IDD-Fa19-Lab3/blob/master/LCDacceldemo.ino)
 
