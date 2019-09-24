@@ -55,10 +55,11 @@ Assuming we are taking the input from the FSR's voltage divider circuit into the
 
 [![LCD Accelerometer Readout](http://img.youtube.com/vi/sdidXR9ATxI/0.jpg)](https://www.youtube.com/watch?v=sdidXR9ATxI)
 
- 
 [Accelerometer Readout Code](https://github.com/TomiKalejaiye/IDD-Fa19-Lab3/blob/master/LCDacceldemo.ino)
 
-[![Accelerometer LED Mapped Lightshow] (http://img.youtube.com/vi/m6MSwwDDkrs/0.jpg)](https://www.youtube.com/watch?v=m6MSwwDDkrs)
+[![Accelerometer LED Mapped Lightshow](http://img.youtube.com/vi/m6MSwwDDkrs/0.jpg)](https://www.youtube.com/watch?v=m6MSwwDDkrs)
+
+*Accelerometer mapped to LED.*
 
 ## Graphic Display
 
