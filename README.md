@@ -115,6 +115,37 @@ Assuming we are taking the input from the FSR's voltage divider circuit into the
  
 ### 1. Reading and writing values to the Arduino EEPROM
 
+*Note, as the SwitchState2 code currently functions, in state1, all that will be read out is byte values from the EEPROM. In order to actually see the string saved to the EEPROM the type of the variable "value" has to be changed to type char, and that can be typecast to String. The code that implements this can be seen below. It is a modification of the state1 code.*
+
+```
+// This borrows code from Examples->EEPROM->eeprom_read
+
+char value;
+
+void state1Setup() {
+  Serial.println("Reading from EEPROM");
+
+  for (int i = 0; i < EEPROMSIZE; i++) {
+    value = EEPROM.read(i);
+    Serial.print(String(value));
+  }
+  Serial.println();
+
+  Serial.println("Done reading from EEPROM");
+}
+
+void state1Loop() {
+  digitalWrite(LED_BUILTIN, LOW);    // turn the LED off by making the voltage LOW
+}
+
+void doState1() {
+  if (lastState != 1) { state1Setup(); }
+  state1Loop();
+}
+```
+
+
+
 **a. Does it matter what actions are assigned to which state? Why?**
 
 It doesn't matter which actions are assigned to which state, as long as we know, and keep track of that information. That is to say, if we changed which action was associated with each state, the potentiometer position associated with each state would also be different. 
