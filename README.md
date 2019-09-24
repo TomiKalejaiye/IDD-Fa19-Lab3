@@ -31,6 +31,8 @@ can be seen above.
  
 ### 1. FSR, Flex Sensor, Photo cell, Softpot
 
+[![Flex Sensor Response on Serial Plotter](http://img.youtube.com/vi/iBb9lkzekFg/0.jpg)](https://www.youtube.com/watch?v=iBb9lkzekFg)
+
 **a. What voltage values do you see from your force sensor?**
 
 The voltage values range from about 0 to 990, corresponding to 0V to about 4.8V
