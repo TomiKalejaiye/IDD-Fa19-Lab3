@@ -33,9 +33,17 @@ can be seen above.
 
 **a. What voltage values do you see from your force sensor?**
 
+The voltage values range from about 0 to 990, corresponding to 0V to about 4.8V
+
 **b. What kind of relationship does the voltage have as a function of the force applied? (e.g., linear?)**
 
+The relationship of voltage to force applied appears not to be linear. It seems to be more exponential. However it is very difficult to tell, because I am likely not increasing the force linearly.
+
+The resistance of the sensor has an inverse relationship with the force applied (k/F, where k is some constant). From voltage divider equation, we know that the Vout = (R2/(R1+R2))Vin. In this case, R2 is the constant resistor, and R1 is the force sensor. Subsitituting 1/F for R1 we get: Vout = (R2/((k/F)+R2))Vin. This is the relationship of voltage as a function of force applied. This implies an approximately linear response that asymptotically approaches Vin.
+
 **c. Can you change the LED fading code values so that you get the full range of output voltages from the LED when using your FSR?**
+
+Assuming we are taking the input from the FSR's voltage divider circuit into the Arduino and outputting a voltage to the LED based on this, we could use Arduino's map() function to map the input voltages from the FSR's range of 0 to 990 to the LED's full range of 0 to 255. 
 
 **d. What resistance do you need to have in series to get a reasonable range of voltages from each sensor?**
 
@@ -45,21 +53,16 @@ can be seen above.
  
 **a. Include your accelerometer read-out code in your write-up.**
 
-### 3. IR Proximity Sensor
+## Graphic Display
 
-**a. Describe the voltage change over the sensing range of the sensor. A sketch of voltage vs. distance would work also. Does it match up with what you expect from the datasheet?**
-
-**b. Upload your merged code to your lab report repository and link to it here.**
-
-## Optional. Graphic Display
-
-**Take a picture of your screen working insert it here!**
+![Working OLED Display](https://imgur.com/QwcrOHM.jpg)
 
 ## Part D. Logging values to the EEPROM and reading them back
  
 ### 1. Reading and writing values to the Arduino EEPROM
 
 **a. Does it matter what actions are assigned to which state? Why?**
+
 
 **b. Why is the code here all in the setup() functions and not in the loop() functions?**
 
