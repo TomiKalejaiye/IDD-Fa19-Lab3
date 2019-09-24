@@ -63,14 +63,23 @@ Assuming we are taking the input from the FSR's voltage divider circuit into the
 
 **a. Does it matter what actions are assigned to which state? Why?**
 
+It doesn't matter which actions are assigned to which state, as long as we know, and keep track of that information. That is to say, if we changed which action was associated with each state, the potentiometer position associated with each state would also be different. 
 
 **b. Why is the code here all in the setup() functions and not in the loop() functions?**
 
+The code in state0.ino, state1.ino, and state2.ino is being called in SwitchState2.ino. The other files are simply defining these functions. They won't be called independently, so they don't need a loop() function.
+
 **c. How many byte-sized data samples can you store on the Atmega328?**
+
+Since the Atmega328's EEPROM can store 1024 bytes of data, we can store 1024 byte sized data samples.
 
 **d. How would you get analog data from the Arduino analog pins to be byte-sized? How about analog data from the I2C devices?**
 
+The default resolution of the Arduino's ADC is its max of 10 bits, so the analogRead() funtion returns 10 bit values (0-1023) from the analog pins. However the EEPROM stores and addresses data in bytes which are 8 bits (representing values 0-255). To get around this we can use the analogReadResolution() function to set the analogRead() resolution to 8 bits, so it will return 8 bit values.  According to the I2C protocol, data is always sent in 8-bit chunks anwyays, so we wouldn't need to do anything to the analog data from I2C devices.
+
 **e. Alternately, how would we store the data if it were bigger than a byte? (hint: take a look at the [EEPROMPut](https://www.arduino.cc/en/Reference/EEPROMPut) example)**
+
+We would have to use multiple addresses. We would start at one address, write a byte, then continue to the next and write until we've written the entire value.
 
 **Upload your modified code that takes in analog values from your sensors and prints them back out to the Arduino Serial Monitor.**
 
