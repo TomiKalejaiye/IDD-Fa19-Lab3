@@ -22,7 +22,7 @@ The ADC on Arduino Uno has a max resolution of 10 bits. A table for bit resoluti
 
 1. A cable must be run from the power rail to the common anode pin (longest pin) on the LED.
 2. Resistors placed at each of the three remaining pins. This is to prevent too large of a voltage drop across the LED.
-3. Wires run from the other ends of the resistors to utput pins on the Arduino.
+3. Wires run from the other ends of the resistors to output pins on the Arduino.
 
 By addressing the output pins in an Arduino sketch we can now control the LED and display different colors. A demonstration
 can be seen above.
