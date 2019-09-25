@@ -166,7 +166,7 @@ The default resolution of the Arduino's ADC is its max of 10 bits, so the analog
 
 We would have to use multiple addresses. We would start at one address, write a byte, then continue to the next and write until we've written the entire value.
 
-**Upload your modified code that takes in analog values from your sensors and prints them back out to the Arduino Serial Monitor.**
+**I modified the code in state2.ino from the SwitchState2 code which uses a pot to switch between reading, writing, and clearing states. I modified state2, the writing state, to write 100 analog values to the EEPROM rather than a constant string. I used the force sensor voltage divider circuit from before to test this code. The code can be found [here](https://github.com/TomiKalejaiye/IDD-Fa19-Lab3/blob/master/state2.ino)**
 
 ### 2. Design your logger
  
