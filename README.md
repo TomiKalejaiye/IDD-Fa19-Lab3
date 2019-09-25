@@ -169,9 +169,19 @@ We would have to use multiple addresses. We would start at one address, write a 
 **I modified the code in state2.ino from the SwitchState2 code which uses a pot to switch between reading, writing, and clearing states. I modified state2, the writing state, to write 100 analog values to the EEPROM rather than a constant string. I used the force sensor voltage divider circuit from before to test this code. The code can be found [here](https://github.com/TomiKalejaiye/IDD-Fa19-Lab3/blob/master/state2.ino)**
 
 ### 2. Design your logger
+
+My logger simply takes an analog input from a force sensor and writes it to the EEPROM. You can than read it back by changing the mode or "state" of the Arduino sketch. I controlthe state by pressing a button. I use the button on a rotary encoder because I already happened to have it wired but any button can be used.
+
+ ![Logger State Diagram](https://github.com/TomiKalejaiye/IDD-Fa19-Lab3/blob/master/StateDiagram.jpg)
  
-**a. Insert here a copy of your final state diagram.**
+ There are actually 4 states here. The way my code is written does not make this explicit so I'd like to clarify here. When initially uploaded to the Arduino, my code reads the EEPROM and outputs its contents to the serial monitor. This state is what I call S1 or "READING". When it is finished reading, it goes into the state I call S2 or "READ". In this state nothing happens. If I then press the button I've wired to the Arduino, the state changes to S3 which is "WRITE". In this state, nothing will happen, unless a force is applied to the force sensor. Once a force is applied, we wnter S4 or "WRITING". In this state, the force sensor's analog values are actually being written to the EEPROM. Once no more force is being applied to the sensor, we re-enter "WRITE", and will remain there doing nothing until either a force is applied again (which would repeat the loop), or the button is pressed, which would take us back to "READING" and read out what we have written.
+ 
+ The code for my datta logger can be found [here](https://github.com/TomiKalejaiye/IDD-Fa19-Lab3/blob/master/DataLogger.ino).
+ 
+ *Note: I refer to "play" and "record" in my code. This is because I intend to ultimately use a speaker to play the saved analog voltages. For now it simply displays them on the serial monitor.*
 
 ### 3. Create your data logger!
  
 **a. Record and upload a short demo video of your logger in action.**
+
+[![My Datalogger](http://img.youtube.com/vi/fgMbgL2Uqwc/0.jpg)](https://www.youtube.com/watch?v=fgMbgL2Uqwc)
