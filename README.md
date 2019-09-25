@@ -95,7 +95,11 @@ Assuming we are taking the input from the FSR's voltage divider circuit into the
 
 **d. What resistance do you need to have in series to get a reasonable range of voltages from each sensor?**
 
+I used 10K resistors for all of the sensors. 
+
 **e. What kind of relationship does the resistance have as a function of stimulus? (e.g., linear?)**
+
+The softpot appears to have a linear relationship. For the others, it is unclear, as I was not entirely sure I was varying their properties uniformly in the first place.
 
 ### 2. Accelerometer
 
